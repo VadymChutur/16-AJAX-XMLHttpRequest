@@ -47,3 +47,62 @@ const objB = {
 };
 
 objB.skills.foo();
+// const objC = {
+//   age: 22,
+//   skills: {
+//     skill: ['html', 'css'],
+//     boo() {
+//       const test = () => {
+//         console.log(this);
+//       };
+//       test();
+//     },
+//   },
+// };
+// const objC = {
+//   age: 22,
+//   myAge() {
+//     const test = () => {
+//       console.log(this);
+//     };
+//     test();
+//   },
+// };
+
+// const objD = {
+//   age: 12,
+//   someFunction: objC.myAge,
+// };
+
+// objC.myAge();
+// objD.someFunction();
+
+const objC = {
+  age: 22,
+  myAge() {
+    const test = () => {
+      console.log(this);
+    };
+    test();
+  },
+};
+
+const objD = {
+  age: 12,
+  someFunction: objC.myAge,
+};
+
+const objE = {
+  age: 13,
+  somecrazy: objD.someFunction,
+};
+
+objE.somecrazy();
+
+const objF = {
+  name: 'F',
+  foo: () => {
+    console.log(this);
+  },
+};
+objF.foo();
